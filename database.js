@@ -1,17 +1,22 @@
-const {
-    createPool} = require('mysql');
+
+
+
+// Load environment variables from .env file
+require('dotenv').config();
+
+const { createPool } = require('mysql');
 
 const pool = createPool({
-    host:"localhost",
-    user:"root",
-    password:"root",
-    database:"session",
-    connectionLimit: 10
-})
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    connectionLimit: parseInt(process.env.DB_CONNECTION_LIMIT, 10)
+});
 
-pool.query('select* from users', (err, result, field)=>{
-    if (err){
-        return console.log(err)
+pool.query('SELECT * FROM users', (err, result, fields) => {
+    if (err) {
+        return console.log(err);
     }
     return console.log(result);
-})
+});
