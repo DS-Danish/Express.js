@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Message
+  body
+    if type == 'success'
+      h1= message
+      p Name: #{person.name}
+      p Email: #{person.email}
+    else
+      h1= message
