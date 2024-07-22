@@ -1,9 +1,5 @@
-
-
-
 // Load environment variables from .env file
 require('dotenv').config();
-
 const { createPool } = require('mysql');
 
 const pool = createPool({
@@ -14,9 +10,25 @@ const pool = createPool({
     connectionLimit: parseInt(process.env.DB_CONNECTION_LIMIT, 10)
 });
 
-pool.query('SELECT * FROM users', (err, result, fields) => {
-    if (err) {
-        return console.log(err);
-    }
-    return console.log(result);
-});
+// Function to create users table if it doesn't exist
+const createUsersTable = () => {
+    const createTableQuery = `
+        CREATE TABLE IF NOT EXISTS users (
+            id VARCHAR(255) PRIMARY KEY,
+            password VARCHAR(255) NOT NULL
+        );
+    `;
+
+    pool.query(createTableQuery, (err, results) => {
+        if (err) {
+            console.error('Error creating users table:', err);
+        } else {
+            console.log('Users table created or already exists');
+        }
+    });
+};
+
+// Call the function to create the table
+createUsersTable();
+
+module.exports = pool; // AI-GEN - ChatGPT GPT-4
