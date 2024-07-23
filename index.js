@@ -9,10 +9,11 @@ var session = require('express-session');
 
 // MySQL setup
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'danish_test' // Ensure this matches your actual database name
+  host: 'danish-test.chggie8cqmk9.eu-north-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'xcVzm2kIHmMACOP19siL',
+  database: 'danish_test', // Ensure this matches your actual database name
+  port: "3306"
 };
 
 
