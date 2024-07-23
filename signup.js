@@ -9,6 +9,7 @@ const getSignupPage = require('./routes/get/getSignupPage');
 const deleteUser = require('./routes/post/deleteUser');
 const loginUser = require('./routes/post/loginUser');
 const signUpUser = require('./routes/post/signUpUser');
+const { createUsersTable } = require('./database');
 
 const app = express();
 
@@ -31,6 +32,8 @@ app.use(getSignupPage);
 app.use(deleteUser);
 app.use(loginUser);
 app.use(signUpUser);
+
+createUsersTable();
 
 
 

@@ -28,7 +28,7 @@ const createUsersTable = () => {
     });
 };
 
-// Call the function to create the table
-createUsersTable();
-
-module.exports = pool; // AI-GEN - ChatGPT GPT-4
+module.exports = {
+    pool,
+    createUsersTable
+};
