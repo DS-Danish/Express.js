@@ -45,7 +45,7 @@ createUsersTable();
 
 // Middleware to check if user is logged in
 app.use((req, res, next) => {
-  const publicPaths = ['/login', '/signup', '/getLoginPage', '/getSignupPage'];
+  const publicPaths = ['/loginUser', '/signUpUser', '/getLoginPage', '/getSignupPage'];
   if (!req.session.user && !publicPaths.includes(req.path)) {
     if (req.path === '/protected_page') {
       req.session.message = '';
