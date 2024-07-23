@@ -27,10 +27,7 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
-  console.log(`Incoming request: ${req.method} ${req.url}`);
-  console.log('Headers:', req.headers);
-  console.log('Body:', req.body);
-  console.log('Query:', req.query);
+  console.log(`Incoming request: ${req.method} ${req.url} at ${new Date().toISOString()}`);
   next();
 });
 
