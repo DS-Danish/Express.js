@@ -7,13 +7,13 @@ const bcrypt = require('bcrypt');
 const { pool } = require('../../database');
 
 router.post('/loginUser', function(req, res){
-    const { id, password } = req.body;
+    const { name, password } = req.body;
   
-    if (!id || !password) {
+    if (!name || !password) {
       return res.render('login', { message: 'All fields are required' });
     }
   
-    const sql = 'SELECT * FROM users WHERE id = ?';
+    const sql = 'SELECT * FROM users WHERE name = ?';
     pool.query(sql, [id], async (err, results) => {
       if (err) {
         console.error('Error fetching user:', err);
