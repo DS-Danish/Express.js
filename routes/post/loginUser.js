@@ -14,7 +14,7 @@ router.post('/loginUser', function(req, res){
     }
   
     const sql = 'SELECT * FROM users WHERE name = ?';
-    pool.query(sql, [id], async (err, results) => {
+    pool.query(sql, [name], async (err, results) => {
       if (err) {
         console.error('Error fetching user:', err);
         return res.render('login', { message: 'Internal server error' });
