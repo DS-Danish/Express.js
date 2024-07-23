@@ -19,8 +19,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "signup": "node signup.js"
+    "start": "node signup.js"
   },
   "author": "DS",
   "license": "ISC",
