@@ -34,7 +34,7 @@ router.post('/loginUser', function(req, res){
       req.session.user = user;
       req.session.cookie.maxAge = 60000; // 1 minute
       req.session.message = ''; // Clear any existing message on successful login
-      return res.redirect('/protected_page');
+      return res.redirect('/getProtectedPage');
     });
   });
 

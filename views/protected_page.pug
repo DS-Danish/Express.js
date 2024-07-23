@@ -4,16 +4,16 @@
    <title>Protected page</title>
 </head>
 <body>
-   <div>Hey #{user.id}, How are you doing today?</div>
+   <div>Hey #{user.name}, How are you doing today?</div>
    <div>Your password is #{user.password}</div>
    <div>Want to log out?</div>
    <div>
       <!-- Form with a submit button to log out -->
-      <form action="/logout" method="GET">
+      <form action="/logoutUser" method="GET">
          <button type="submit">Logout</button>
       </form>
         <!-- Delete with a submit button to log out -->
-      <form action="/delete" method="POST">
+      <form action="/deleteUser" method="POST">
          <button type="submit">Delete</button>
       </form>
    </div>

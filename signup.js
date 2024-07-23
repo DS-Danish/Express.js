@@ -31,6 +31,17 @@ app.use((req, res, next) => {
   next();
 });
 
+
+// Middleware to check if user is logged in
+app.use((req, res, next) => {
+  const publicPaths = ['/loginUser', '/signUpUser', '/getLoginPage', '/getSignupPage'];
+  if (!req.session.user && !publicPaths.includes(req.path)) {
+    req.session.message = 'Your session has expired. Login Again';
+    return res.redirect('/getLoginPage');
+  }
+  next();
+});
+
 app.use(getLoginPage);
 app.use(logoutUser);
 app.use(getProtectedPage);
@@ -40,22 +51,6 @@ app.use(loginUser);
 app.use(signUpUser);
 
 createUsersTable();
-
-
-
-// Middleware to check if user is logged in
-app.use((req, res, next) => {
-  const publicPaths = ['/loginUser', '/signUpUser', '/getLoginPage', '/getSignupPage'];
-  if (!req.session.user && !publicPaths.includes(req.path)) {
-    if (req.path === '/protected_page') {
-      req.session.message = '';
-    } else {
-      req.session.message = 'Your session has expired. Login Again';
-    }
-    return res.redirect('/getLoginPage');
-  }
-  next();
-});
 
 const PORT = 3000;
 app.listen(PORT, () => {

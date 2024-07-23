@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/getLoginPage', function(req, res){
     const message = req.session.message || '';
     req.session.message = ''; // Clear message after reading
+    console.log("message:", message)
     res.render('login', { message });
   });
 
