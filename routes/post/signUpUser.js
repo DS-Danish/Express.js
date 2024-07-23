@@ -23,6 +23,7 @@ router.post('/signUpUser', async function(req, res){
           console.error('Error adding user:', err);
           return res.render('signup', { message: 'Internal server error' });
         } else {
+          console.log('Redirecting to login page after signup');
           return res.redirect('/login');
         }
       });

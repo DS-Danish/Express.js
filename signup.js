@@ -47,7 +47,7 @@ createUsersTable();
 app.use((req, res, next) => {
   if (!req.session.user) {
     if (req.path === '/protected_page') {
-      req.session.message = ''; // Clear any existing message if accessing protected page directly
+      req.session.message = '';
     } else {
       req.session.message = 'Your session has expired. Login Again'; // Set message for session expiration
     }

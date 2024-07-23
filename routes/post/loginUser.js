@@ -2,7 +2,7 @@
 // AI-GEN START - ChatGPT GPT4
 const express = require('express');
 const router = express.Router();
-const pool = require('../../database');
+const { pool } = require('../../database');
 
 router.post('/loginUser', function(req, res){
     const { id, password } = req.body;
