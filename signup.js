@@ -25,6 +25,15 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge: 60000 } // 1 minute
 }));
+
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.url}`);
+  console.log('Headers:', req.headers);
+  console.log('Body:', req.body);
+  console.log('Query:', req.query);
+  next();
+});
+
 app.use(getLoginPage);
 app.use(logoutUser);
 app.use(getProtectedPage);
