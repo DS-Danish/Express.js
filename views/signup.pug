@@ -1,9 +1,19 @@
+// AI-GEN START - ChatGPT GPT-4
+doctype html
 html
-   head
-      title Signup
-   body
-      h4 #{message}
-      form(action = "/signUpUser" method = "POST")
-         input(name = "id" type = "text" required placeholder = "User ID")
-         input(name = "password" type = "password" required placeholder = "Password")
-         button(type = "Submit") Sign me up!
+  head
+    title Signup Page
+  body
+    if message
+      p= message
+    form(action="/signUpUser", method="post", enctype="multipart/form-data")
+      label(for="name") Name:
+      input(type="text", name="name", required)
+      label(for="email") Email:
+      input(type="email", name="email", required)
+      label(for="password") Password:
+      input(type="password", name="password", required)
+      label(for="profilePic") Profile Picture:
+      input(type="file", name="profilePic", required)
+      button(type="submit") Sign Up
+// AI-GEN END

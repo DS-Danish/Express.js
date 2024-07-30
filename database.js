@@ -1,4 +1,4 @@
-// Load environment variables from .env file
+// AI-GEN START - ChatGPT GPT-4
 require('dotenv').config();
 const { createPool } = require('mysql');
 
@@ -14,8 +14,11 @@ const pool = createPool({
 const createUsersTable = () => {
     const createTableQuery = `
         CREATE TABLE IF NOT EXISTS users (
-            id VARCHAR(255) PRIMARY KEY,
-            password VARCHAR(255) NOT NULL
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) UNIQUE NOT NULL,
+            password VARCHAR(255) NOT NULL,
+            s3_key VARCHAR(255) NOT NULL
         );
     `;
 
@@ -32,3 +35,4 @@ module.exports = {
     pool,
     createUsersTable
 };
+// AI-GEN END

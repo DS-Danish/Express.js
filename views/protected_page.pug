@@ -1,21 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <title>Protected page</title>
-</head>
-<body>
-   <div>Hey #{user.name}, How are you doing today?</div>
-   <div>Your password is #{user.password}</div>
-   <div>Want to log out?</div>
-   <div>
-      <!-- Form with a submit button to log out -->
-      <form action="/logoutUser" method="GET">
-         <button type="submit">Logout</button>
-      </form>
-        <!-- Delete with a submit button to log out -->
-      <form action="/deleteUser" method="POST">
-         <button type="submit">Delete</button>
-      </form>
-   </div>
-</body>
-</html>
+// AI-GEN START - ChatGPT GPT-4
+doctype html
+html
+   head
+      title Protected Page
+   body
+      div Hey #{user.name}, how are you doing today?
+      div Your password is #{user.password}.
+      
+      div Want to log out?
+      div
+         // Form with a submit button to log out
+         form(action="/logoutUser" method="GET")
+           button(type="submit") Logout
+         
+      div Want to delete your account?
+      div
+         // Form with a submit button to delete the user
+         form(action="/deleteUser" method="POST")
+           button(type="submit") Delete
+         
+      div 
+         // Form to upload a new profile picture
+         form(id="uploadForm" action=`/S3Post_user_pic` method="POST" enctype="multipart/form-data")
+            input(type="file" name="profilePic" id="profilePicInput" style="display: none;" onchange="document.getElementById('uploadForm').submit();")
+            button(type="button" onclick="document.getElementById('profilePicInput').click();") Upload New Profile Picture
+      if user.profilePicUrl
+         div
+            img(src=user.profilePicUrl alt="Profile Picture" style="max-width: 500px; height: auto;")
+// AI-GEN END

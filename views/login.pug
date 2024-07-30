@@ -1,9 +1,17 @@
+// AI-GEN START - ChatGPT GPT-4
+doctype html
 html
-   head
-      title Login
-   body
-      h4 #{message}
-      form(action = "/loginUser" method = "POST")
-         input(name = "name" type = "text" required placeholder = "User ID")
-         input(name = "password" type = "password" required placeholder = "Password")
-         button(type = "Submit") Log in
+  head
+    title Login
+  body
+    form(action="/loginUser" method="POST")
+      label(for="email") Email:
+      input(type="email" name="email" required)
+      label(for="password") Password:
+      input(type="password" name="password" required)
+      button(type="submit") Login
+    div
+      // Forgot Password form with button
+      form(action="/getResetPasswordPage" method="GET")
+        button(type="submit") Forgot Password
+// AI-GEN END

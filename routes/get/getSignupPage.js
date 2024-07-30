@@ -1,10 +1,10 @@
-// signup.js
-// AI-GEN START - ChatGPT GPT4
+// AI-GEN START - ChatGPT GPT-4
 const express = require('express');
 const router = express.Router();
 
-router.get('/getSignupPage', function(req, res){
-  res.render('signup', { message: '' });
+router.get('/', (req, res) => {
+    console.log('GET /getSignupPage hit');
+    res.render('signup', { message: req.session.message || '' });
 });
 
 module.exports = router;
