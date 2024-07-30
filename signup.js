@@ -1,4 +1,3 @@
-// AI-GEN START - ChatGPT GPT-4
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -16,8 +15,8 @@ const loginUser = require('./routes/post/loginUser');
 const signUpUser = require('./routes/post/signUpUser');
 const S3GetUserPic = require('./routes/get/S3Get_user_pic');
 const S3PostUserPic = require('./routes/post/S3Post_user_pic');
-const getResetPasswordPage = require('./routes/get/resetpassword'); // GET route for reset password page
-const resetPassword = require('./routes/post/resetpassword'); // POST route for password reset
+const getResetPasswordPage = require('./routes/get/resetpassword');
+const resetPassword = require('./routes/post/resetpassword');
 
 const { createUsersTable } = require('./database');
 
@@ -79,4 +78,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-// AI-GEN END

@@ -1,4 +1,3 @@
-// AI-GEN START - ChatGPT GPT-4
 const express = require('express');
 const router = express.Router();
 
@@ -8,4 +7,3 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
-// AI-GEN END

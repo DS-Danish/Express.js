@@ -1,4 +1,3 @@
-// AI-GEN START - ChatGPT GPT-4
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
@@ -61,6 +60,4 @@ router.post('/', upload.single('profilePic'), async (req, res) => {
   }
 });
 
-module.exports = router;
-// AI-GEN END
- 
+module.exports = router; 

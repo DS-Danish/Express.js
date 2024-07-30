@@ -1,4 +1,3 @@
-// AI-GEN START - ChatGPT GPT-4
 require('dotenv').config();
 const { createPool } = require('mysql');
 
@@ -35,4 +34,3 @@ module.exports = {
     pool,
     createUsersTable
 };
-// AI-GEN END

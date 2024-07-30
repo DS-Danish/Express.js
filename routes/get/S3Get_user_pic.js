@@ -1,4 +1,3 @@
-// AI-GEN START - ChatGPT GPT-4
 const express = require('express');
 const { S3Client, GetObjectCommand } = require('@aws-sdk/client-s3');
 const router = express.Router();
@@ -25,4 +24,3 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router;
-// AI-GEN END

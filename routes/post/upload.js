@@ -1,4 +1,3 @@
-// AI-GEN START - ChatGPT GPT-4
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const AWS = require('aws-sdk');
@@ -38,4 +37,3 @@ const upload = multer({
 });
 
 module.exports = upload;
-// AI-GEN END
